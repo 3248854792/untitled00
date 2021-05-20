@@ -6,8 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Date;
 
-public class MyFrameDate<Jlabel> extends JFrame {
-    Jlabel datelabel;
+public class MyFrameDate extends JFrame {
+    JLabel datelabel;
 
     public MyFrameDate() {
         this.setBounds(100, 100, 300, 300);
@@ -35,13 +35,14 @@ public class MyFrameDate<Jlabel> extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 showDate();
+
             }
         };
-
+        b1.addActionListener(listener1);
     }
 
-    private void showDate() {
+    public void showDate() {
         Date nowTime = new Date();
-        datelabel.setText(nowTime.toString() );
+        datelabel.setText(nowTime.toString());
     }
 }
